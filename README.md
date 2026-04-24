@@ -1,32 +1,42 @@
 # testtt
-from ds_python_interpreter import HTML
-import os
+md_content = """# 📋 Tibbi Məhsullar Bölməsi - Test Hesabatı
 
-# Define the content for the Markdown file
-md_content = """# Tibbi Məhsullar Bölməsinin Test Hesabatı
+Bu hesabat platformadakı tibbi məhsullar kateqoriyası üzrə aparılmış funksional testlərin nəticələrini əks etdirir.
 
-## 1. Pozitiv Yoxlamalar (Uğurlu Testlər)
-Aşağıdakı funksionallıqlar gözlənildiyi kimi çalışır:
+---
 
-* **Kateqoriya Keçidi:** Kateqoriyalarda "Tibbi məhsullar" bölməsinə kliklədikdə səhifə problemsiz açılır.
-* **Regional Filtr:** "Bakıdakı tibbi məhsullar" seçiminə kliklədikdə müvafiq siyahı açılır.
-* **Məzmun Uyğunluğu:** Tibbi məhsullar bölməsində yalnız həmin kateqoriyaya aid məhsullar nümayiş olunur.
-* **Axtarış Funksiyası:** Axtarış sahəsinə "termometr" yazdıqda sistem yalnız termometrləri nəticə olaraq çıxarır.
-* **Məhsul Kartı:** Tibbi məhsullar kateqoriyasındakı hər hansı konkret məhsula kliklədikdə məhsulun detallı səhifəsi açılır.
+## ✅ Pozitiv Ssenarilər (Uğurlu Nəticələr)
+*Sistemin gözlənildiyi kimi və problemsiz işlədiyini göstərən testlər:*
 
-## 2. Neqativ Yoxlamalar (Məhdudiyyətlər və Xətalar)
-Aşağıdakı hallar sistemin məhdudiyyətlərini və ya potensial xətaları göstərir:
+| Test Parametri | Gözlənilən Davranış | Nəticə |
+| :--- | :--- | :--- |
+| **Kateqoriya Keçidi** | "Tibbi məhsullar" bölməsi klikləndikdə açılmalıdır. | Pass |
+| **Regional Filtrləmə** | Bakı şəhəri üzrə tibbi məhsullar siyahıya alınmalıdır. | Pass |
+| **Məzmun Uyğunluğu** | Bölmədə yalnız tibbi təyinatlı mallar görünməlidir. | Pass |
+| **Axtarış Funksionallığı** | "Termometr" axtarışı zamanı müvafiq cihazlar tapılmalıdır. | Pass |
+| **Məhsul Kartı** | Seçilmiş məhsula kliklədikdə detallı baxış açılmalıdır. | Pass |
 
-* **Çoxlu Şəhər Seçimi:** Sistem eyni anda bir neçə şəhəri seçməyə icazə vermir.
-* **Qiymət Sahəsi:** Qiymət xanasına mənfi rəqəm yazmaq mümkün deyil (Gözlənilən davranışdır).
-* **Sıfır Qiymət Filtri:** Həm minimum, həm də maksimum qiymətə "0" yazdıqda heç bir məhsul tapılmır.
-* **Məkan Uyğunsuzluğu:** Bakıda yerləşən termometri Ağdam üçün axtarışa verdikdə, məntiqi olaraq nəticə çıxmır.
-* **Çatdırılma Filtri:** "Bütün növ çatdırılmalar" seçildikdə, yalnız bir növ çatdırılması olan məhsulların da siyahıda görünməsi müşahidə olunur.
+---
+
+## ❌ Neqativ Ssenarilər (Məhdudiyyətlər və Qüsurlar)
+*Sistemin limitlərini, qadağalarını və ya məntiqi çatışmazlıqlarını göstərən hallar:*
+
+### 📍 Şəhər və Məkan Filtrləri
+* **Çoxlu Seçim Məhdudiyyəti:** Sistem eyni anda bir neçə müxtəlif şəhəri seçməyə imkan vermir.
+* **Regional Tapılmama:** Bakı bazasına aid olan termometrin Ağdam axtarışında çıxmaması (Məntiqi doğruluq).
+
+### 💸 Qiymət və Rəqəmsal Girişlər
+* **Mənfi Qiymət Bloku:** Qiymət xanasına mənfi rəqəm daxil etmək bloklanıb (Sistem təhlükəsizliyi).
+* **Sıfır Nəticə:** Minimum və maksimum qiymət "0" təyin edildikdə bazada heç bir məhsul tapılmır.
+
+### 🚚 Çatdırılma Məntiqi
+* **Filtr Uyğunsuzluğu:** "Bütün növ çatdırılmalar" seçildikdə, yalnız tək növ çatdırılması olan məhsulların da siyahıda qalması (Filtr optimizasiyası tələb olunur).
+
+---
+> *Qeyd: Bu hesabat proqramın QA (Keyfiyyətə Nəzarət) mərhələsi üçün hazırlanmışdır.*
 """
 
-# Save to a .md file
-file_path = "tibbi_mehsullar_test_hesabati.md"
-with open(file_path, "w", encoding="utf-8") as f:
+# Faylın saxlanılması
+file_name = "Tibbi_Mehsullar_Test_Hesabati_v3.md"
+with open(file_name, "w", encoding="utf-8") as f:
     f.write(md_content)
-
-print(f"File saved: {file_path}")
