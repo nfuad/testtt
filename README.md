@@ -1,20 +1,19 @@
 # testtt
-md_content = """# 📋 Tibbi Məhsullar Bölməsi - Test Hesabatı
-
 Bu hesabat platformadakı tibbi məhsullar kateqoriyası üzrə aparılmış funksional testlərin nəticələrini əks etdirir.
 
----
-
-## ✅ Pozitiv Ssenarilər (Uğurlu Nəticələr)
+## ✅ Pozitiv Yoxlamalar
 *Sistemin gözlənildiyi kimi və problemsiz işlədiyini göstərən testlər:*
 
-| Test Parametri | Gözlənilən Davranış | Nəticə |
-| :--- | :--- | :--- |
-| **Kateqoriya Keçidi** | "Tibbi məhsullar" bölməsi klikləndikdə açılmalıdır. | Pass |
-| **Regional Filtrləmə** | Bakı şəhəri üzrə tibbi məhsullar siyahıya alınmalıdır. | Pass |
-| **Məzmun Uyğunluğu** | Bölmədə yalnız tibbi təyinatlı mallar görünməlidir. | Pass |
-| **Axtarış Funksionallığı** | "Termometr" axtarışı zamanı müvafiq cihazlar tapılmalıdır. | Pass |
-| **Məhsul Kartı** | Seçilmiş məhsula kliklədikdə detallı baxış açılmalıdır. | Pass |
+### 📂 Kateqoriya və Giriş
+* **Kateqoriya Keçidi:** Kateqoriyalarda "Tibbi məhsullar" bölməsinə kliklədikdə səhifə problemsiz açıldı.
+* **Məhsul Kartı:** Tibbi məhsullar kateqoriyasındakı hər hansı konkret məhsula kliklədikdə məhsulun detallı səhifəsi açıldı.
+
+### 🔍 Axtarış və Məzmun
+* **Axtarış Funksiyası:** Axtarış sahəsinə "termometr" yazdıqda sistem yalnız termometrləri nəticə olaraq çıxardı.
+* **Məzmun Uyğunluğu:** Tibbi məhsullar bölməsində yalnız həmin kateqoriyaya aid məhsullar nümayiş olundu.
+
+### 📍 Regional Uyğunluq
+* **Regional Filtr:** "Bakıdakı tibbi məhsullar" seçiminə kliklədikdə müvafiq siyahı dərhal açıldı.
 
 ---
 
@@ -32,11 +31,4 @@ Bu hesabat platformadakı tibbi məhsullar kateqoriyası üzrə aparılmış fun
 ### 🚚 Çatdırılma Məntiqi
 * **Filtr Uyğunsuzluğu:** "Bütün növ çatdırılmalar" seçildikdə, yalnız tək növ çatdırılması olan məhsulların da siyahıda qalması (Filtr optimizasiyası tələb olunur).
 
----
 > *Qeyd: Bu hesabat proqramın QA (Keyfiyyətə Nəzarət) mərhələsi üçün hazırlanmışdır.*
-"""
-
-# Faylın saxlanılması
-file_name = "Tibbi_Mehsullar_Test_Hesabati_v3.md"
-with open(file_name, "w", encoding="utf-8") as f:
-    f.write(md_content)
